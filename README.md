@@ -13,7 +13,7 @@ npm test       # runs all unit and API integration tests in test/
 
 ## What was built
 
-We implemented the saved jobs feature across the API, frontend, and test suite:
+I implemented the saved jobs feature across the API, frontend, and test suite:
 
 1. **User Interface (`public/index.html`, `public/app.js`)**:
    - **Save button**: Added to each job in the list. Clicking it saves the job and updates the button state to a disabled "Saved" state.
@@ -38,7 +38,7 @@ We implemented the saved jobs feature across the API, frontend, and test suite:
 ## Key Decision and Why
 
 **Normalized persistence by storing only job IDs in `saved.json`:**
-Instead of duplicating the full job object (title, company, stipend, location) into `saved.json`, we store only an ordered array of unique job IDs (`["j1", "j2"]`). When `GET /api/saved` is called, `getSavedJobs()` resolves the full job details against `jobs.json`.
+Instead of duplicating the full job object (title, company, stipend, location) into `saved.json`, I store only an ordered array of unique job IDs (`["j1", "j2"]`). When `GET /api/saved` is called, `getSavedJobs()` resolves the full job details against `jobs.json`.
 
 **Why:**
 - **Single source of truth**: If a job's details (such as stipend or title) are updated in `jobs.json`, the saved view automatically reflects the current details rather than stale data.

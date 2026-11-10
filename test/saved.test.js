@@ -96,3 +96,4 @@ describe("saved module persistence", () => {
     assert.deepEqual(loaded, ["j1", "j2"]);
   });
 });
+
